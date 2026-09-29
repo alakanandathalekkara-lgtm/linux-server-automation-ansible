@@ -1,0 +1,8 @@
+---
+- name: Create DevOps user
+  ansible.builtin.user:
+    name: devops
+    shell: /bin/bash
+    groups: wheel
+    append: true
+    state: present

@@ -1,0 +1,10 @@
+---
+- name: Linux Server Automation
+  hosts: webservers
+  become: true
+
+  roles:
+    - common
+    - users
+    - webserver
+    - firewall

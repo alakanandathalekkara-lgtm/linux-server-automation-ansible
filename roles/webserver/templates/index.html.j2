@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ansible Server</title>
+</head>
+<body>
+    <h1>Linux Server Automated Using Ansible</h1>
+
+    <p>Hostname: {{ ansible_hostname }}</p>
+    <p>Operating System: {{ ansible_distribution }}</p>
+    <p>OS Version: {{ ansible_distribution_version }}</p>
+    <p>Server IP: {{ ansible_default_ipv4.address }}</p>
+</body>
+</html>

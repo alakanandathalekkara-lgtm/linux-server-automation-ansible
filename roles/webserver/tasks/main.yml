@@ -1,0 +1,23 @@
+---
+- name: Install Apache
+  ansible.builtin.dnf:
+    name: httpd
+    state: present
+- name: Set SELinux context for web content
+  ansible.builtin.file:
+    path: /var/www/html
+    setype: httpd_sys_content_t
+    state: directory
+
+- name: Deploy website
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    mode: '0644'
+  notify: Restart Apache
+
+- name: Start Apache
+  ansible.builtin.service:
+    name: httpd
+    state: started
+    enabled: true

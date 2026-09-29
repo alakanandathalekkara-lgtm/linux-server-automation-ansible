@@ -1,0 +1,8 @@
+---
+- name: Install common packages
+  ansible.builtin.dnf:
+    name:
+      - git
+      - vim
+      - wget
+    state: present
